@@ -1,0 +1,18 @@
+affected paramter
+
+* name
+* email
+* date
+* start time
+* end time
+* venu
+* event type
+* additional info
+
+
+affected pages:
+
+* view-booking-detail.php
+* invoice-generating.php
+* status.php
+* request-details.php

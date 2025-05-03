@@ -21,6 +21,9 @@ An **Insecure Direct Object Reference (IDOR)** vulnerability occurs when an atta
 
 ## Steps to Reproduce
 
+> ⚠️ **Note:** I downloaded the project source and hosted it on my private virtual server.  
+> For privacy reasons, I'm hiding the domain name.
+
 1. **Book the service using the URL:**
     ```
     https://domain.com/book-services.php?bookid=1

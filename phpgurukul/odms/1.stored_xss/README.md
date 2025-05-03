@@ -1,23 +1,27 @@
-# Insecure Direct Object Reference (IDOR) Vulnerability Report
+# Stored Cross Site Scripting (XXS) Vulnerability Report
 
 ## Affected Product
 
 | **Attribute**           | **Details**                               |
 |-------------------------|-------------------------------------------|
 | **Vendor**              | PHPGurukul                                |
-| **Vulnerability**       | Insecure Direct Object Reference (IDOR)   |
-| **Affected Path**       | `domain.com/request-details.php?bid=x&&bookingid=xxxxxxxx` |
-| **Affected File**       | `odms/request-details.php`                |
+| **Vulnerability**       | Stored Cross Site Scripting               |
+| **Affected Path**       | `/view-booking-detail.php`,`invoice-generating.php`,`` |
+| **Affected File**       | `odms/admin/view-booking-detail.php`,`odms/admin/invoice-generating.php`                |
 | **Application Name**    | Online DJ Booking Management System       |
 | **Version(s) Affected** | V2.0                                      |
 
 ## Official Website
 
-[PHPGurukul - Online DJ Booking Management System](https://phpgurukul.com/online-dj-booking-management-system-using-php-and-mysql/)
+
+
+[PHPGurukul - Online DJ Booking Management System - Project Source Code](https://phpgurukul.com/online-dj-booking-management-system-using-php-and-mysql/)
 
 ## Vulnerability Overview
 
-An **Insecure Direct Object Reference (IDOR)** vulnerability occurs when an attacker can access or modify data by manipulating a parameter (e.g., `bid`) in a URL. In this case, by changing the `bid` value, an attacker can view another user's personal information. This vulnerability exposes sensitive data due to a lack of proper authorization checks.
+Stored Cross-Site Scripting (Stored XSS) is a type of security vulnerability where malicious scripts are permanently stored on the server (e.g., in a database). When another user (often an admin) views the stored data, the script is executed in their browser.
+
+In this case Anyone can submit an event request with input fields. Since the input is not sanitized or escaped, an attacker can inject a malicious script into the request (e.g., <script>alert('document.domain')</script>). When an admin opens that request, the script runs in their browser—potentially stealing cookies, session data, or performing unwanted actions.
 
 ## Steps to Reproduce
 
@@ -45,7 +49,7 @@ An **Insecure Direct Object Reference (IDOR)** vulnerability occurs when an atta
 7. **On the request details page, notice the two parameters: `bid` and `bookingid`.**  
     ![Request Page](./images/request-page.png)
 
-8. **Modify the `bookingid` by decreasing the value.**
+8. **Modify the `bookingid` by either increasing or decreasing the value.**
 
 9. **You will now be able to see another user's personal information, such as phone number, email, name, and event details.**  
     ![IDOR Impact](./images/idor.png)
