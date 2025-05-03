@@ -21,7 +21,7 @@ An **Insecure Direct Object Reference (IDOR)** vulnerability occurs when an atta
 
 ## Steps to Reproduce
 
-> ⚠️ **Note:** I downloaded the project source and hosted it on my private virtual server.  
+> ⚠️ **Note:** I downloaded the project source and hosted it on my Virtual Private Server (VPS).  
 > **For privacy reasons, I'm hiding the domain name.**
 
 1. **Book the service using the URL:**
