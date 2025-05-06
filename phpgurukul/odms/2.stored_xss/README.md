@@ -150,6 +150,8 @@ Apply this change to all user-generated data displayed in view-user-queries.php.
 
 ## 📚 References
 
+- [CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')](https://cwe.mitre.org/data/definitions/79.html)
+- [CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute](https://cwe.mitre.org/data/definitions/614.html)
 - [PortSwigger – Stored XSS](https://portswigger.net/web-security/cross-site-scripting/stored)  
 - [OWASP – Cross-Site Scripting (XSS)](https://owasp.org/www-community/attacks/xss/)  
 - [OWASP – XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
