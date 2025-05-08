@@ -18,7 +18,7 @@
 
 ## ⚠️ Vulnerability Overview:
 
-Stored Cross-Site Scripting (Stored XSS) is a security vulnerability where malicious scripts are permanently stored on the server (e.g., in a database). When another user—often an administrator—views the stored data, the script is executed in their browser.
+Stored Cross-Site Scripting (Stored XSS) is a security vulnerability where malicious scripts are permanently stored on the server (e.g., in a database). When another user often an administrator views the stored data, the script is executed in their browser.
 
 In this case, **anyone can submit a contact us query form** through input fields. Since the inputs are **not sanitized or escaped**, an attacker can inject a malicious script into the request (e.g., `<script>alert('document.domain')</script>`). When an admin opens that query in the dashboard, the script executes in their browser, potentially leading to:
 
